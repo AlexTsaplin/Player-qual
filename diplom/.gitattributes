@@ -1,0 +1,9 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Позначаємо аудіофайли як binary (Git не обробляє їх як текст)
+*.mp3 binary
+*.wav binary
+*.flac binary
+*.ogg binary
+

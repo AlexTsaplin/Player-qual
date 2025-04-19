@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" />
+	
+	<link rel="stylesheet" href="style.css"/>
+	<title>YouPlayer</title>
+</head>
+<body>
+	<div class="container active">
+		<!-- Головне меню -->
+		<div class="main-menu active">
+			<img src="/data/image/YouPlayer.png" alt="YouPlayer Logo" class="menu-logo" style="width: 100%; height: 100%; padding-top: 20px;">
+			<ul class="menu-list">
+				<li><button id="openPlayer" data-lang="openPlayer">Програвач</button></li>
+				<li><button id="openSettings" data-lang="settings">Налаштування</button></li>
+				<li><button id="openAboutApp" data-lang="about">Про YouPlayer</button></li>
+				<li><button id="openUploadModal" data-lang="uploadModalSong">Завантажити пісню</button></li>
+			</ul>
+		</div>
+		
+		<!-- Модальне вікно завантаження пісні -->
+		<div id="uploadModal" class="settings-container" style="display: none;">
+			<div class="settings-content">
+			  <h2 style="color: #111;" data-lang="uploadSong">Додати пісню</h2>
+			  <form id="uploadForm" enctype="multipart/form-data">
+				<label style="color: #111;" data-lang="audioFile">Аудіофайл:</label>
+				<input type="file" name="audio" accept=".mp3" required style="color: #111;"><br><br>
+				
+				<label style="color: #111;" data-lang="coverImage">Обкладинка:</label>
+				<input type="file" name="cover" accept=".jpg,.png" style="color: #111;"><br><br>
+				
+				<label style="color: #111;" data-lang="songTitle">Назва:</label>
+				<input type="text" name="title" placeholder="Song title" required><br><br>
+				
+				<label style="color: #111;" data-lang="artist">Артист:</label>
+				<input type="text" name="artist" placeholder="Artist" required><br><br>
+				
+				<label style="color: #111;" data-lang="genre">Жанр:</label>
+				<select name="genre" required>
+				  <option value="" data-lang="chooseGenre">Оберіть жанр</option>
+				  <option value="pop" data-lang="pop">Поп</option>
+				  <option value="rock" data-lang="rock">Рок</option>
+				  <option value="hiphop" data-lang="hiphop">Хіп-хоп</option>
+				  <option value="electronic" data-lang="electronic">Електроніка</option>
+				  <option value="rap" data-lang="rap">Реп</option>
+				  <option value="indie" data-lang="indie">Інді</option>
+				  <option value="phonk" data-lang="phonk">Фонк</option>
+				  <option value="metal" data-lang="metal">Метал</option>
+				</select><br><br>
+
+				<label style="color: #111;" data-lang="association">Асоціація кольора з піснею</label>
+				<input type="text" name="color1" placeholder="Main color (eng.)" required><br><br>
+				<input type="text" name="color2" placeholder="Additional color (eng.)"><br>
+	
+				<button type="submit" data-lang="upload">Завантажити</button>
+			  </form>
+			  <br>
+			  <button id="closeUploadModal" data-lang="close">Закрити</button>
+			</div>
+		  </div>
+
+		<audio id="audioPlayer" controls style="display:none;"></audio>
+	
+		<!-- Модальне вікно тесту Люшера -->
+		<div id="luscherModal" class="luscher-test-container" style="display: none;">
+			<div class="test-content">
+				<h2 data-lang="luscherTestTitle">Тест Люшера</h2>
+				<p data-lang="luscherTestText">Виберіть колір, який вам найбільш приємний:</p>
+				<div class="color-buttons">
+					<button class="color-choice" style="background-color: blue;" data-color="blue"></button>
+					<button class="color-choice" style="background-color: #00FF00;" data-color="green"></button>
+					<button class="color-choice" style="background-color: red;" data-color="red"></button>
+					<button class="color-choice" style="background-color: yellow;" data-color="yellow"></button>
+					<button class="color-choice" style="background-color: black;" data-color="black"></button>
+					<button class="color-choice" style="background-color: #FFF;" data-color="white"></button>
+					<button class="color-choice" style="background-color: purple;" data-color="purple"></button>
+					<button class="color-choice" style="background-color: brown;" data-color="brown"></button>
+				</div>
+				<p id="timer" data-lang="timerText" style="color: black; font-size: 18px; margin-top: 10px;">10 секунд залишилося</p>
+			</div>
+			<div class="test-footer">
+				<button id="closeLuscherModal" data-lang="close">Закрити</button>
+			</div>
+		</div>
+		
+		<!-- Модальне вікно Ритмічного тесту -->
+		<div id="rhythmModal" class="luscher-test-container" style="display: none;">
+			<div class="test-content">
+				<h2 data-lang="rhythmTestTitle">Ритмічний тест</h2>
+				<p data-lang="rhythmTestText">Натискайте кнопку у бажаному ритмі:</p><br>
+				<button id="rhythmTapButton" style="font-size: 24px; padding: 20px;" data-lang="click">Натискайте</button><br>
+				<p id="rhythmResult" data-lang="bpm">BPM: --</p>
+				<p id="rhythmTimer" data-lang="timeLeft">Час: 0 с</p>
+			</div>
+			<div class="test-footer">
+				<button id="closeRhythmModal" style="color: white;" data-lang="close">Закрити</button>
+			</div>
+		</div>		
+
+		<!-- Модальне вікно MBTI тесту -->
+		<div id="mbtiModal" class="mbti-test-container" style="display: none;">
+			<div class="test-content">
+				<h2 data-lang="mbtiTestTitle">MBTI тест</h2>
+				<div id="mbtiQuestionContainer"></div>
+				<button id="mbtiNextButton" data-lang="next">Далі</button>
+			</div>
+			<div class="test-footer">
+				<button id="closeMbtiModal" style="display: none;" data-lang="close">Закрити</button>
+			</div>
+		</div>
+
+		<!-- Модальне вікно За жанрами -->
+		<div id="genreTestModal" class="genre-test-container" style="display: none;">
+			<div class="test-content">
+				<p data-lang="genreTestText">Оберіть жанр, який вам подобається:</p>
+				<div class="genre-buttons">
+					<button class="genre-choice" data-lang="rock" data-genre="rock">Рок</button>
+					<button class="genre-choice" data-lang="pop" data-genre="pop">Поп</button>
+					<button class="genre-choice" data-lang="hiphop" data-genre="hiphop">Хіп-хоп</button>
+					<button class="genre-choice" data-lang="electronic" data-genre="electronic">Електроніка</button>
+					<button class="genre-choice" data-lang="rap" data-genre="rap">Реп</button>
+					<button class="genre-choice" data-lang="indie" data-genre="indie">Інді</button>
+					<button class="genre-choice" data-lang="phonk" data-genre="phonk">Фонк</button>
+					<button class="genre-choice" data-lang="metal" data-genre="metal">Метал</button>
+				</div>
+			</div>
+			<div class="test-footer">
+				<button id="closeGenreTestModal" data-lang="close">Закрити</button>
+			</div>
+		</div>
+
+		<!-- Модальне вікно промпта -->
+		<div id="choiceModal" class="choice-container" style="display: none;">
+			<div class="choice-content">
+				<h2 data-lang="chooseOption">Оберіть опцію</h2>
+				<div class="choice-buttons">
+					<button id="chooseGenreTest" data-lang="genreTest">За жанрами</button>
+					<button id="chooseLuscher" data-lang="luscherTest">Тест Люшера</button>
+					<button id="chooseMbtiTest" data-lang="mbtiTest">MBTI тест</button>
+					<button id="chooseRhythmTest" data-lang="rhythmTest">Ритмічний тест</button>		
+				</div>
+			</div>
+			<div class="choice-footer">
+				<button id="closeChoiceModal" style="color: white" data-lang="close">Закрити</button>
+			</div>
+		</div>
+
+		<!-- продовження візуалу плеєра -->
+		 <div class="player-content" style="display: none;">
+			<div class="top">
+			   <i class="fas fa-bars menu-btn" style="padding: 4px;"></i>
+			   <input type="text" class="search-input" placeholder="Search song..." style="display: none;">
+			   <i class="fas fa-search search-btn" style="padding: 4px;"></i>
+			</div>
+
+		<div class="cover-image"></div>
+		<div class="player-body"></div>
+
+		<div class="list-wrapper">
+			<table class="list" id="playlist">
+				<tr class="song">
+					<td class="no">
+						<h5>1</h5>
+					</td>
+					<td class="title">
+						<h6>Song Title</h6>
+					</td>
+					<td class="artist">
+						<h6>Artist Title</h6>
+					</td>
+					<td class="length">
+						<h5>0:00</h5>
+					</td>
+					<td>
+						<i class="fas fa-heart"></i>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="track-info-modal" id="trackInfoModal" style="display: none;">
+			<div class="track-info-content">
+				<i class="fas fa-arrow-left close-btn" id="closeTrackInfo"></i>
+			  <div class="track-info-details">
+				<div class="track-cover"></div>
+				<div class="track-details">
+				  <h4 class="track-title">Song Title</h2>
+				  <h5 class="track-artist">Artist</h3>
+				</div>
+			  </div>
+			  <div class="track-info-actions">
+				<button class="action-btn" data-lang="share">Поширити</button>
+			</div>			
+			</div>
+		  </div>
+
+		<div class="bar">
+			<div class="dot"></div>
+			<div class="time">
+				<h5 class="current-time" style="font-size: 12px;">0:00</h5>
+				<h5 class="duration" style="font-size: 12px;">0:00</h5>
+			</div>
+		</div>
+
+		<div class="info">
+			<h2>song title</h2>
+			<h3>artist</h3>
+		</div>
+
+		<div class="controls">
+			<button id="backToMenu" data-lang="menu" style="padding: 10px; background: none; border: 1px solid #fff; color: #fff; cursor: pointer;">Меню</button>
+			<i class="fas fa-backward" id="prev"></i>
+			<i class="fas fa-play" id="playpause"></i>
+			<i class="fas fa-forward" id="next"></i>
+		</div>
+		
+
+		<div class="more-controls">
+			<i class="fas fa-heart" id="current-favourite"></i>
+			<i class="fas fa-random" id="shuffle"></i>
+			<i class="fas fa-repeat" id="repeat"></i>
+			<i class="fa-solid fa-ellipsis" id="option"></i>
+			<input type="range" id="volume-control" min="0" max="1" step="0.01" value="1">
+			<span id="volume-percentage">100%</span>
+		</div>
+
+		<p class="current-song-title">song title</p>
+	</div>
+
+	<!-- Модальне вікно налаштувань -->
+	<div id="settingsModal" class="settings-container" style="display: none;">
+		<div class="settings-content">
+			<h2 style="color: #111;" data-lang="setting">Налаштування</h2>
+
+			<label for="languageSelect" style="color: #111; margin-top: 15px; margin-bottom: 10px;" data-lang="language">Мова</label>
+			<select id="languageSelect">
+				<option value="uk">Українська</option>
+				<option value="en">English</option>
+			</select>
+
+			<label for="playerColor" style="color: #111; margin-top: 15px;" data-lang="playerColor">Колір плеєра</label>
+			<input type="color" id="playerColor" value="#ff564c" style="margin-top: 10px;">
+
+			<br><br>
+			<button id="closeSettings" data-lang="close">Закрити</button>
+		</div>
+	</div>
+
+	<!-- Модальне вікно про YouPlayer -->
+	<div class="about-app-modal" id="aboutAppModal" style="display: none;">
+		<div class="about-app-content">
+			<i class="fas fa-arrow-left close-btn" id="closeAboutApp"></i>
+			<h2 data-lang="aboutTitle">Про YouPlayer</h2>
+			<p data-lang="aboutText">
+				YouPlayer — ідеальний супутник для любителів музики. Керуйте своїми треками, створюйте персоналізовані плейлисти та насолоджуйтеся якісним звуком у будь-якій ситуації.
+			</p>
+			<div>
+				<p data-lang="appVersion">Версія додатка: 0.0.0</p>
+			</div>
+		</div>
+	</div>
+	
+<script src="player.js"></script>
+
+</body>
+</html>

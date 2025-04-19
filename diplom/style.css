@@ -1,0 +1,1327 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+    --primary-color: #ff564c;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.small-artist {
+    font-size: 8px; 
+    opacity: 0.8;
+}
+
+#playerContainer {
+    background-color: var(--player-color, #222); 
+    transition: background 0.3s ease;
+}
+
+.container {
+    height: 650px;
+    width: 366px;
+    position: relative;
+    overflow: hidden;
+    background: #be9d9d;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.container #backToMenu {
+    display: none;
+}
+
+#backToMenu {
+    background-color: transparent; 
+    color: white; 
+    font-size: 18px; 
+    padding: 12px 24px; 
+    border: 2px solid white;
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    display: block;
+    margin: 20px auto; 
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1); 
+}
+
+#backToMenu:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    transform: scale(1.05); 
+    border-color: #ddd; 
+}
+
+#backToMenu:active {
+    transform: scale(0.98); 
+}
+
+
+i {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+i:hover {
+    color: #106f9b;
+}
+i:active {
+    color: var(--primary-color);
+}
+
+.top {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.container.active .top {
+    color: #111;
+}
+
+.container.active #backToMenu {
+    display: inline-block;
+}
+
+.search-btn {
+    display: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.container.active .search-btn {
+    display: inline-block; 
+}
+
+.search-input {
+    width: 200px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    display: none;
+}
+
+.container.active .search-input {
+    display: inline-block;
+}
+
+.cover-image {
+    width: 100%;
+    height: 366px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("data/image/song.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform-origin: 0% 0%;
+    transition: all 0.3s ease-in;
+}
+
+.container.active .cover-image {
+    transform: scale(0.251);
+    left: 23px;
+    top: 60px;
+    border-radius: 20px;
+}
+
+.player-body {
+    position: absolute;
+    top: 366px;
+    left: 0;
+    height: 286px;
+    width: 100%;
+    background-color: #111;
+    transition: all 0.3s;
+    display: none;
+}
+
+.container.active .player-body {
+    height: 470px;
+    top: 180px;
+}
+
+.list-wrapper {
+    height: 425px;
+    width: 100%;
+    overflow: auto;
+    position: absolute;
+    top: 378px;
+    transform-origin: 0% 0%;
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.1);
+}
+
+.container.active .list-wrapper {
+    top: 182px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.list {
+    width: 100%;
+    border-spacing: 0px 2px;
+}
+
+.list tr {
+    height: 50px;
+    text-align: center;
+    background-color: #1d1d1d;
+    text-indent: 8px;
+    transform-origin: 0% 50%;
+}
+
+.list tr:hover {
+    background-color: #222;
+    cursor: pointer;
+}
+
+.list .title {
+    width: 215px;
+    text-align: left;
+    text-indent: 15px;
+    transition: all 0.3s;
+}
+
+.list tr:hover .title {
+    padding-left: 5px;
+    width: 210px;
+}
+
+.current-song-title {
+    position: absolute;
+    right: 23px;
+    font-size: 14px;
+    bottom: -60px;
+    transition: all 0.3s;
+}
+
+.container.active .current-song-title {
+    bottom: 10px;
+}
+
+.info {
+    position: absolute;
+    left: 50%;
+    top: 440px;
+    transform: translateX(-50%);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.info h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.info h3 {
+    font-size: 10px;
+    color: #6d6d6d;
+}
+
+.container.active .info {
+    top: 66px;
+    left: 126px;
+    text-align: left;
+    transform: translateX(0);
+    color: #111;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    bottom: 100px;
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.controls #playpause {
+    font-size: 40px;
+}
+
+.container.active .controls {
+    width: 216px;
+    bottom: 4px;
+    left: -44px;
+    transform: scale(0.45);
+}
+
+.more-controls {
+    color: #6d6d6d;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 20;
+    transition: all 0.3s;
+}
+
+.container.active .more-controls {
+    bottom: -60px;
+}
+
+.fa-heart.active {
+    color: #ff564c;
+}
+.fa-heart.active,
+.fa-random.active,
+.fa-repeat.active {
+    color: #ff564c;
+}
+.container.active .fa-heart:hover,
+.menu-btn:hover,
+.search-btn:hover,
+#closeTrackInfo:hover,
+#prev:hover,
+#playpause:hover,
+#next:hover,
+#current-favourite:hover,
+#shuffle:hover,
+#repeat:hover,
+#option:hover,
+#closeAboutApp:hover {
+    color: #ff564c; 
+}
+
+.bar {
+    position: absolute;
+    width: 320px;
+    height: 2px;
+    top: 580px;
+    left: 23px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.container.active .bar {
+    top: 120px;
+    left: 85px;
+    background-color: #111;
+    transform: scale(0.6875);
+}
+
+.bar .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: -4px;
+    left: 0;
+    user-select: none;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.bar .time {
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+#volume-control {
+    width: 100px;
+    margin-left: 10px;
+    cursor: pointer;
+    appearance: none;
+    background-color: #fff;
+    height: 4px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#volume-control::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+#volume-percentage {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+    min-width: 40px;
+    text-align: right;
+    transition: none;
+}
+
+.container.active #volume-percentage {
+    color: #111;
+}
+
+/*Інформація про пісню*/
+.track-info-modal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white; 
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: opacity 0.3s; 
+  }
+  
+  .track-info-content {
+    padding: 20px;
+    height: 650px;
+  }
+  
+  .close-btn {
+    font-size: 18px; 
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+  }
+  
+  .track-info-details {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .track-cover {
+    width: 140px;
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+  
+  .track-details h2, .track-details h3 {
+    margin: 0;
+  }
+  
+  .track-info-actions {
+    margin-top: 15px;
+  }
+  
+  .action-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; 
+    border-radius: 7px;
+  }
+  
+  .action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); 
+  }
+  
+/* Menu */
+.main-menu {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    display: block; 
+  position: relative; 
+  z-index: 10; 
+ }
+ 
+ .main-menu h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+ }
+ 
+ .menu-list {
+    list-style: none;
+    padding: 0;
+    padding-top: 50px;
+ }
+ 
+ .menu-list li {
+    margin: 15px 0;
+ }
+ 
+ .menu-list button {
+    width: 200px; 
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 15px 0; 
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center; 
+    
+}
+
+.menu-list button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+ }
+ 
+.player-content {
+    display: none;
+  }
+ 
+.player-content.active {
+    display: block;
+ }
+ 
+ 
+ #chooseLuscher,
+ #chooseMbtiTest,
+ #chooseRhythmTest,
+ #chooseGenreTest {
+     width: 190px;
+ }
+
+ #chooseLuscher,
+ #chooseMbtiTest,
+ #chooseRhythmTest,
+ #chooseGenreTest {
+    height: 41.55px;
+ }
+
+/* ТЕСТ ЛЮШЕРА */
+.luscher-test-container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100; 
+}
+
+#mbtiModal .test-content {
+    position: relative;
+    padding-bottom: 60px; 
+}
+
+#closeMbtiModal {
+    position: absolute;
+    bottom: 5%;     
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(82, 82, 82, 0.8);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.test-content {
+    background-color: #be9d9d;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; 
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-buttons {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.color-buttons button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.test-footer {
+    position: absolute;
+    bottom: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.test-footer button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(82, 82, 82, 0.8); 
+    border: none;
+    border-radius: 7px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+.test-footer button:hover {
+    background-color: rgba(168, 147, 147, 0.9); 
+    transform: scale(1.05); 
+}
+.test-footer button:focus {
+    outline: none; 
+}
+.test-footer button:active {
+    background-color: rgba(0, 0, 0, 1); 
+}
+
+#chooseLuscher {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+#chooseLuscher:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#chooseLuscher:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+}
+#closeLuscherModal {
+    position: relative;
+    top: -10px; 
+}
+/* ТЕСТ ЛЮШЕРА */
+
+/* Ритм. Тест */
+.rhythm-test-container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+#chooseRhythmTest {
+    background-color: #4CAF50;
+}
+
+#chooseRhythmTest:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#rhythmTapButton {
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#rhythmTapButton:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+#rhythmTapButton:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+}
+
+#chooseRhythmTest {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+#chooseRhythmTest:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#chooseRhythmTest:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+}
+
+#closeRhythmModal {
+    position: absolute;
+    bottom: 25px;
+}
+/* Ритм. Тест */
+
+/* MBTI тест */
+.mbti-test-container {
+    position: absolute; 
+    top: 10;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+#mbtiQuestionContainer {
+    padding: 20px;
+    text-align: center;
+}
+
+.mbti-options {
+    margin-top: 20px;
+}
+
+.mbti-option {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(82, 82, 82, 0.8);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.mbti-option:hover {
+    background-color: rgba(168, 147, 147, 0.9);
+    transform: scale(1.05);
+}
+
+#closeMbtiModal {
+    position: absolute; 
+    bottom: -40px; 
+    width: 117px; 
+    display: flex;
+}
+
+#chooseMbtiTest {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+#chooseMbtiTest:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#chooseMbtiTest:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+}
+
+#mbtiNextButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+#mbtiNextButton:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#mbtiNextButton:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+}
+/* MBTI тест */
+
+/* За жанрами */
+.genre-test-container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100; 
+}
+
+.test-content {
+    background-color: #be9d9d;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.genre-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.genre-choice {
+    width: 100px;  
+    height: 35px;  
+    border-radius: 20px; 
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff564c;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genre-choice:hover {
+    background: #ff9a76;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.genre-choice:active {
+    transform: scale(0.98);
+    background: #ff564c;
+}
+
+.test-footer {
+    position: absolute;
+    bottom: 140px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.test-footer button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(82, 82, 82, 0.8);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.test-footer button:hover {
+    background-color: rgba(168, 147, 147, 0.9);
+    transform: scale(1.05);
+}
+
+.test-footer button:focus {
+    outline: none;
+}
+
+.test-footer button:active {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#chooseGenreTest {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+#chooseGenreTest:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#chooseGenreTest:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+}
+#closeGenreTestModal {
+    position: relative;
+    top: 15px; 
+  }
+
+/* За жанрами */
+
+/* Вікно вибору варіантів */
+.choice-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.choice-content {
+    background-color: #be9d9d;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.choice-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.choice-buttons button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#chooseLuscher {
+    background-color: #4CAF50;
+}
+
+#chooseLuscher:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.choice-footer {
+    position: absolute;
+    bottom: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.choice-footer button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(82, 82, 82, 0.8);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.choice-footer button:hover {
+    background-color: rgba(168, 147, 147, 0.9);
+    transform: scale(1.05);
+}
+.choice-footer button:focus {
+    outline: none;
+}
+.choice-footer button:active {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+/* Options selection window */
+
+/* Модальне вікно "про YouPlayer" */
+.player-container {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    overflow: hidden; 
+  }
+  
+  .about-app-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow: auto;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .about-app-content {
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%; 
+    max-width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    overflow-y: auto; 
+  }
+  
+  .about-app-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .about-app-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .close-btn {
+    font-size: 20px; 
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    transition: transform 0.3s; 
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2); 
+  }
+  
+  .about-app-actions {
+    margin-top: 30px;
+  }
+  
+  .action-btn {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); 
+  }
+/* Модальне вікно про YouPlayer */
+
+/* Налаштування */
+.settings-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; 
+    min-height: 200px; 
+}
+
+.settings-content select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.settings-content button {
+    background: #ff4b5c;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.settings-content button:hover {
+    background: #ff1e3c;
+}
+
+.settings-container.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.settings-container.active .settings-content {
+    transform: translateY(0);
+}
+
+.settings-content h2,
+.settings-content label {
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+#closeSettings {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    width: 160px; 
+    margin-top: 15px;
+}
+
+#closeSettings:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#closeSettings:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+}
+.color-picker {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.color-picker:hover {
+    transform: scale(1.1);
+}
+/* Settings */
+
+/* Завантаження пісень */
+#uploadModal.settings-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    max-width: 280px;
+    width: 85%;
+}
+
+#uploadModal .settings-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+#uploadModal .settings-content input[type="text"],
+#uploadModal .settings-content input[type="file"],
+#uploadModal .settings-content select {
+    width: 95%;
+    padding: 6px 8px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+    text-align: center;
+}
+
+#uploadModal .settings-content input[type="text"]:focus,
+#uploadModal .settings-content input[type="file"]:focus,
+#uploadModal .settings-content select:focus {
+    border-color: #ff4b5c;
+    outline: none;
+}
+
+#uploadModal .settings-content label {
+    font-weight: 500;
+    color: #333;
+    margin-top: 3px;
+    font-size: 13px;
+}
+
+#uploadModal .settings-content button[type="submit"] {
+    background: linear-gradient(45deg, #ff4b5c, #ff9a76);
+    border: none;
+    color: white;
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#uploadModal .settings-content button[type="submit"]:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff4b5c);
+    transform: scale(1.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+#uploadModal .settings-content button[type="submit"]:active {
+    transform: scale(0.96);
+}
+
+/* Кнопка закриття */
+#closeUploadModal {
+    margin-top: 6px;
+    background: #eee;
+    color: #111;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#closeUploadModal:hover {
+    background: #ccc;
+}
+
+/* Downloading a song */

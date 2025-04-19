@@ -1,0 +1,1299 @@
+[
+  {
+    "id": 0,
+    "title": "STRESSED OUT",
+    "artist": "Twenty One Pilots",
+    "img_src": "twentyp.gif",
+    "src": "Twenty One Pilots - Stressed Out.mp3",
+    "genre": "rock",
+    "colors": {
+      "blue": 30,
+      "black": 50,
+      "red": 20
+    }
+  },
+  {
+    "id": 1,
+    "title": "Hello",
+    "artist": "Tricky Nicki feat. Talberg",
+    "img_src": "hello.jpg",
+    "src": "Tricky Nicki - Hello feat. Talberg.mp3",
+    "genre": "pop",
+    "colors": {
+      "green": 70,
+      "blue": 30
+    }
+  },
+  {
+    "id": 2,
+    "title": "SWISH",
+    "artist": "Tyga",
+    "img_src": "Swish.jpg",
+    "src": "Tyga - SWISH.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "red": 60,
+      "yellow": 40
+    }
+  },
+  {
+    "id": 3,
+    "title": "Without Me",
+    "artist": "Eminem",
+    "img_src": "Eminem.jpg",
+    "src": "Eminem - Without Me.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 70,
+      "green": 30
+    }
+  },
+  {
+    "id": 4,
+    "title": "Ride for Ukraine",
+    "artist": "Tricky Nicki",
+    "img_src": "Ukraine.jpg",
+    "src": "Ride-for-Ukraine.mp3",
+    "genre": "pop",
+    "colors": {
+      "blue": 40,
+      "black": 20,
+      "green": 40
+    }
+  },
+  {
+    "id": 5,
+    "title": "Party",
+    "artist": "Kaef x Tricky Nicki",
+    "img_src": "party.jpg",
+    "src": "Kaef-Tricky Nicki.mp3",
+    "genre": "pop",
+    "colors": {
+      "blue": 60,
+      "black": 30,
+      "red": 10
+    }
+  },
+  {
+    "id": 6,
+    "title": "КРУЗАК",
+    "artist": "SKOFKA",
+    "img_src": "kruzak.jpg",
+    "src": "Skofka - Крузак.mp3",
+    "genre": "rap",
+    "colors": {
+      "purple": 20,
+      "yellow": 80
+    }
+  },
+  {
+    "id": 7,
+    "title": "Таксі",
+    "artist": "KALUSH ft. Христина Соловій",
+    "img_src": "taxi.png",
+    "src": "taxi.mp3",
+    "genre": "rap",
+    "colors": {
+      "green": 50,
+      "black": 50
+    }
+  },
+  {
+    "id": 8,
+    "title": "Smack That",
+    "artist": "Akon ft. Eminem",
+    "img_src": "akon.jpg",
+    "src": "Akon Feat. Eminem - Smack That.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 70,
+      "black": 10,
+      "red": 20
+    }
+  },
+  {
+    "id": 9,
+    "title": "OK",
+    "artist": "Tricky Nicki ft. Freaky Siren",
+    "img_src": "OK.jpg",
+    "src": "OK - Tricky Nicki ft. Freaky Siren.mp3",
+    "genre": "pop",
+    "colors": {
+      "green": 40,
+      "white": 30,
+      "yellow": 30
+    }
+  },
+  {
+    "id": 10,
+    "title": "Later Bitches",
+    "artist": "The Prince Karma",
+    "img_src": "later.jpg",
+    "src": "the-prince-karma-later-bitches.mp3",
+    "genre": "electronic",
+    "colors": {
+      "yellow": 60,
+      "white": 40
+    }
+  },
+  {
+    "id": 11,
+    "title": "Keep Their Heads Ringin'",
+    "artist": "Dr. Dre",
+    "img_src": "dr.jpg",
+    "src": "Keep Their Heads Ringin.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "brown": 60,
+      "yellow": 20,
+      "red": 20
+    }
+  },
+  {
+    "id": 12,
+    "title": "Shake That",
+    "artist": "Eminem ft. Nate Dogg",
+    "img_src": "shakethat.jpg",
+    "src": "Shake That.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 50,
+      "purple": 40
+    }
+  },
+  {
+    "id": 13,
+    "title": "Порічка",
+    "artist": "YAKTAK x KOLA",
+    "img_src": "yaktakkola.jpg",
+    "src": "Yaktak feat. Kola - Порічка.mp3",
+    "genre": "pop",
+    "colors": {
+      "white": 60,
+      "brown": 20,
+      "blue": 20
+    }
+  },
+  {
+    "id": 14,
+    "title": "Delirious (Boneless)",
+    "artist": "Steve Aoki & Chris Lake  Tujamo ft. Kid Ink",
+    "img_src": "aokilaketujamo.jpg",
+    "src": "Steve Aoki & Chris Lake feat. Kid Ink & Tujamo - Delirious (Boneless).mp3",
+    "genre": "electronic",
+    "colors": {
+      "yellow": 65,
+      "purple": 35
+    }
+  },
+  {
+    "id": 15,
+    "title": "Praise The Lord (Da Shine)",
+    "artist": "A$AP Rocky ft. Skepta",
+    "img_src": "testing.jpg",
+    "src": "ASAP Rocky feat. Skepta - Praise The Lord (Da Shine).mp3",
+    "genre": "hiphop",
+    "colors": {
+      "black": 30,
+      "red": 40,
+      "yellow": 30
+    }
+  },
+  {
+    "id": 16,
+    "title": "Memories",
+    "artist": "David Guetta Feat. Kid Cudi",
+    "img_src": "memories.jpg",
+    "src": "David Guetta, Kid Cudi – Memories.mp3",
+    "genre": "electronic",
+    "colors": {
+      "white": 50,
+      "blue": 25,
+      "green": 25
+    }
+  },
+  {
+    "id": 17,
+    "title": "The Motto",
+    "artist": "Tiësto & Ava Max",
+    "img_src": "motto.jpg",
+    "src": "Tiesto feat. Ava Max - The Motto.mp3",
+    "genre": "electronic",
+    "colors": {
+      "purple": 50,
+      "yellow": 30,
+      "red": 20
+    }
+  },
+  {
+    "id": 18,
+    "title": "THRIFT SHOP",
+    "artist": "MACKLEMORE & RYAN LEWIS ft. WANZ",
+    "img_src": "theheist.jpg",
+    "src": "MACKLEMORE & RYAN LEWIS - THRIFT SHOP FEAT. WANZ.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "green": 30,
+      "yellow": 40,
+      "purple": 30
+    }
+  },
+  {
+    "id": 19,
+    "title": "Ayy Macarena",
+    "artist": "Tyga",
+    "img_src": "macarena.jpg",
+    "src": "Tyga - Ayy Macarena.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 30,
+      "purple": 20,
+      "red": 50
+    }
+  },
+  {
+    "id": 20,
+    "title": "Panda",
+    "artist": "Desiigner",
+    "img_src": "panda.png",
+    "src": "Desiigner - Panda.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "black": 30,
+      "red": 70
+    }
+  },
+  {
+    "id": 21,
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "img_src": "light.jpg",
+    "src": "The Weeknd - Blinding Lights.mp3",
+    "genre": "electronic",
+    "colors": {
+      "brown": 30,
+      "green": 50,
+      "red": 20
+    }
+  },
+  {
+    "id": 22,
+    "title": "No Fun",
+    "artist": "ThatsKramer ft. Wynn",
+    "img_src": "nofun.jpg",
+    "src": "No Fun Ft. Wynn.mp3",
+    "genre": "electronic",
+    "colors": {
+      "yellow": 55,
+      "brown": 15,
+      "red": 30
+    }
+  },
+  {
+    "id": 23,
+    "title": "Just A Lil Bit",
+    "artist": "50 Cent",
+    "img_src": "lilbit.png",
+    "src": "50 Cent - Just A Lil Bit.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "brown": 50,
+      "red": 40,
+      "green": 10
+    }
+  },
+  {
+    "id": 24,
+    "title": "Провела екскурсію",
+    "artist": "Parfeniuk",
+    "img_src": "p.jpg",
+    "src": "Parfeniuk - Провела Екскурсію.mp3",
+    "genre": "pop",
+    "colors": {
+      "blue": 50,
+      "green": 50
+    }
+  },
+  {
+    "id": 25,
+    "title": "Доберман",
+    "artist": "ZippO feat. Agape & RUNA",
+    "img_src": "doberman.jpg",
+    "src": "ZippO feat. Agape & RUNA - Доберман.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 40,
+      "purple": 30,
+      "red": 30
+    }
+  },
+  {
+    "id": 26,
+    "title": "Кохаю, але не зовсім",
+    "artist": "DOROFEEVA",
+    "img_src": "love.jpg",
+    "src": "DOROFEEVA - Кохаю, але не зовсім.mp3",
+    "genre": "pop",
+    "colors": {
+      "green": 70,
+      "black": 10,
+      "white": 20
+    }
+  },
+  {
+    "id": 27,
+    "title": "Goodbye",
+    "artist": "AREZRA",
+    "img_src": "goodbye.jpg",
+    "src": "AREZRA - Goodbye.mp3",
+    "genre": "electronic",
+    "colors": {
+      "black": 50,
+      "brown": 25,
+      "blue": 25
+    }
+  },
+  {
+    "id": 28,
+    "title": "Pure Water",
+    "artist": "Mustard ft. Migos",
+    "img_src": "purewater.jpg",
+    "src": "Mustard & Migos - Pure Water.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "purple": 20,
+      "red": 80
+    }
+  },
+  {
+    "id": 29,
+    "title": "Candy Shop",
+    "artist": "50 Cent ft. Olivia",
+    "img_src": "candy.jpg",
+    "src": "50 Cent - Candy Shop (Feat. Olivia).mp3",
+    "genre": "hiphop",
+    "colors": {
+      "brown": 10,
+      "yellow": 30,
+      "red": 60
+    }
+  },
+  {
+    "id": 30,
+    "title": "Blueberry Faygo",
+    "artist": "Lil Mosey",
+    "img_src": "faygo.jpg",
+    "src": "Lil Mosey Blueberry Faygo.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "green": 20,
+      "red": 20,
+      "yellow": 60
+    }
+  },
+  {
+    "id": 31,
+    "title": "Ransom",
+    "artist": "Lil Tecca",
+    "img_src": "ransom.jpg",
+    "src": "Lil Tecca - Ransom.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "brown": 30,
+      "red": 60,
+      "purple": 10
+    }
+  },
+  {
+    "id": 32,
+    "title": "Lalala",
+    "artist": "Y2K & bbno$",
+    "img_src": "la.jpg",
+    "src": "Y2K & Bbnos - Lalala.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "white": 40,
+      "green": 40,
+      "purple": 20
+    }
+  },
+  {
+    "id": 33,
+    "title": "Hot",
+    "artist": "ThatsKramer",
+    "img_src": "hot.jpg",
+    "src": "ThatsKramer - Hot.mp3",
+    "genre": "electronic",
+    "colors": {
+      "yellow": 50,
+      "purple": 10,
+      "red": 40
+    }
+  },
+  {
+    "id": 34,
+    "title": "8 O 8",
+    "artist": "J€AN-MARC (JEAZZUS)",
+    "img_src": "ooo.jpg",
+    "src": "8 O 8.mp3",
+    "genre": "electronic",
+    "colors": {
+      "yellow": 50,
+      "red": 50
+    }
+  },
+  {
+    "id": 35,
+    "title": "Heathens",
+    "artist": "Twenty One Pilots",
+    "img_src": "twentyp.gif",
+    "src": "Twenty One Pilots - Heathens.mp3",
+    "genre": "rock",
+    "colors": {
+      "blue": 40,
+      "black": 40,
+      "red": 20
+    }
+  },
+  {
+    "id": 36,
+    "title": "Погляд",
+    "artist": "YAKTAK feat. SOBOL",
+    "img_src": "okko.jpg",
+    "src": "YAKTAK feat SOBOL - Погляд.mp3",
+    "genre": "pop",
+    "colors": {
+      "blue": 15,
+      "yellow": 45,
+      "green": 20,
+      "white": 20
+    }
+  },
+  {
+    "id": 37,
+    "title": "All Night",
+    "artist": "Mishlawi",
+    "img_src": "night.jpg",
+    "src": "Mishlawi - All Night.mp3",
+    "genre": "indie",
+    "colors": {
+      "blue": 50,
+      "green": 20,
+      "brown": 30
+    }
+  },
+  {
+    "id": 38,
+    "title": "Taste",
+    "artist": "Tyga ft. Offset",
+    "img_src": "Swish.jpg",
+    "src": "Tyga feat. Offset - Taste.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 40,
+      "red": 60
+    }
+  },
+  {
+    "id": 39,
+    "title": "Crank It Up",
+    "artist": "Joey Valence & Brae",
+    "img_src": "crankitup.jpg",
+    "src": "Joey Valence Brae - Crank It Up.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 30,
+      "purple": 30,
+      "red": 40
+    }
+  },
+  {
+    "id": 40,
+    "title": "Gangsta's Paradise",
+    "artist": "Coolio feat. L.V.",
+    "img_src": "ganstas.jpg",
+    "src": "Coolio - Gangsta's Paradise.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 30,
+      "black": 20,
+      "red": 50
+    }
+  },
+  {
+    "id": 41,
+    "title": "RAVE IN THE GRAVE",
+    "artist": "REDZED",
+    "img_src": "ravegrave.jpg",
+    "src": "Redzed Rave In The Grave.mp3",
+    "genre": "rap",
+    "colors": {
+      "green": 30,
+      "black": 30,
+      "red": 40
+    }
+  },
+  {
+    "id": 42,
+    "title": "Save Your Tears",
+    "artist": "The Weeknd",
+    "img_src": "saveyourtears.jpg",
+    "src": "The Weeknd - Save Your Tears.mp3",
+    "genre": "pop",
+    "colors": {
+      "blue": 40,
+      "green": 40,
+      "white": 20
+    }
+  },
+  {
+    "id": 43,
+    "title": "Персонажі",
+    "artist": "SadSvit",
+    "img_src": "персонажі.jpg",
+    "src": "sadsvit - personazh.mp3",
+    "genre": "indie",
+    "colors": {
+      "blue": 50,
+      "green": 50
+    }
+  },
+  {
+    "id": 44,
+    "title": "Before I Forget",
+    "artist": "Slipknot",
+    "img_src": "slipknot.jpg",
+    "src": "Slipknot Before I Forget.mp3",
+    "genre": "metal",
+    "colors": {
+      "black": 20,
+      "red": 80
+    }
+  },
+  {
+    "id": 45,
+    "title": "The Kill [Bury Me]",
+    "artist": "THIRTY SECONDS TO MARS",
+    "img_src": "thekill.jpg",
+    "src": "30 Seconds To Mars - The Kill.mp3",
+    "genre": "rock",
+    "colors": {
+      "brown": 10,
+      "black": 30,
+      "red": 60
+    }
+  },
+  {
+    "id": 46,
+    "title": "Vois sur ton chemin",
+    "artist": "BENNETT",
+    "img_src": "tonchemin.jpg",
+    "src": "Bennett Ft Dj Holanda - Vois Sur Ton Chemin.mp3",
+    "genre": "pop",
+    "colors": {
+      "red": 90,
+      "green": 10
+    }
+  },
+  {
+    "id": 47,
+    "title": "ERROR",
+    "artist": "ROMANTICA",
+    "img_src": "errorromantica.jpg",
+    "src": "Romantica - Error.mp3",
+    "genre": "pop",
+    "colors": {
+      "yellow": 20,
+      "brown": 30,
+      "blue": 50
+    }
+  },
+  {
+    "id": 48,
+    "title": "Забий",
+    "artist": "Wellboy & Parfeniuk",
+    "img_src": "wp.jpg",
+    "src": "Wellboy feat. Parfeniuk - Забий.mp3",
+    "genre": "pop",
+    "colors": {
+      "blue": 40,
+      "green": 40,
+      "white": 20
+    }
+  },
+  {
+    "id": 49,
+    "title": "не та Любов",
+    "artist": "Tricky Nicki & KAZKA",
+    "img_src": "tnk.jpg",
+    "src": "tricky nicki ft. kazka ne ta lyubov.mp3",
+    "genre": "pop",
+    "colors": {
+      "blue": 60,
+      "green": 15,
+      "white": 70
+    }
+  },
+  {
+    "id": 50,
+    "title": "I Get The Bag",
+    "artist": "Gucci Mane feat. Migos",
+    "img_src": "igetthebag.jpg",
+    "src": "Gucci Mane & Migos - I Get the Bag.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "green": 40,
+      "purple": 40,
+      "red": 20
+    }
+  },
+  {
+    "id": 51,
+    "title": "FCK This World",
+    "artist": "Discollusion",
+    "img_src": "FCK.jpg",
+    "src": "Discollusion Fck This World.mp3",
+    "genre": "rock",
+    "colors": {
+      "white": 40,
+      "purple": 40,
+      "red": 20
+    }
+  },
+  {
+    "id": 52,
+    "title": "samesquad",
+    "artist": "P-Lo",
+    "img_src": "plo.jpg",
+    "src": "P-Lo - samesquad.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "brown": 30,
+      "yellow": 50,
+      "red": 30
+    }
+  },
+  {
+    "id": 53,
+    "title": "Godzilla",
+    "artist": "Eminem ft. Juice WRLD",
+    "img_src": "godzila.jpg",
+    "src": "Eminem - Godzilla (feat. Juice WRLD).mp3",
+    "genre": "hiphop",
+    "colors": {
+      "purple": 40,
+      "yellow": 30,
+      "red": 40
+    }
+  },
+  {
+    "id": 54,
+    "title": "Surround Sound",
+    "artist": "J.I.D feat. 21 Savage & Baby Tate",
+    "img_src": "SurroundSound.jpg",
+    "src": "JID - Surround Sound (feat. 21 Savage & Baby Tate).mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 70,
+      "purple": 30
+    }
+  },
+  {
+    "id": 55,
+    "title": "Осінь",
+    "artist": "To Eternity",
+    "img_src": "toeternity.jpg",
+    "src": "To Eternity – Осінь.mp3",
+    "genre": "rock",
+    "colors": {
+      "blue": 50,
+      "green": 50
+    }
+  },
+  {
+    "id": 56,
+    "title": "BIBI PHONK BR",
+    "artist": "Bibi Babydoll",
+    "img_src": "bibiphonk.jpg",
+    "src": "bibi babydoll - bibi phonk br.mp3",
+    "genre": "phonk",
+    "colors": {
+      "brown": 20,
+      "red": 80
+    }
+  },
+  {
+    "id": 57,
+    "title": "Do I Wanna Know?",
+    "artist": "Arctic Monkeys",
+    "img_src": "doiwannaknow.jpg",
+    "src": "Arctic Monkeys - Do I Wanna Know.mp3",
+    "genre": "rock",
+    "colors": {
+      "green": 33,
+      "blue": 33,
+      "red": 34
+    }
+  },
+  {
+    "id": 58,
+    "title": "FE!N",
+    "artist": "Travis Scott ft. Playboi Carti",
+    "img_src": "fein.jpg",
+    "src": "travis scott playboi carti - fein.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 50,
+      "black": 10,
+      "red": 40
+    }
+  },
+  {
+    "id": 59,
+    "title": "Runnin'",
+    "artist": "J€AN-MARC (JEAZZUS)",
+    "img_src": "runnin.jpg",
+    "src": "Runnin.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 30,
+      "brown": 30,
+      "red": 40
+    }
+  },
+  {
+    "id": 60,
+    "title": "ПараНоя",
+    "artist": "Levyy MC",
+    "img_src": "paranoya.jpg",
+    "src": "Levyy MC - ПараНоя.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "white": 70,
+      "blue": 25,
+      "black": 5
+    }
+  },
+  {
+    "id": 61,
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "img_src": "weathers.jpg",
+    "src": "The Neighbourhood - Sweater Weather.mp3",
+    "genre": "indie",
+    "colors": {
+      "green": 40,
+      "black": 20,
+      "blue": 40
+    }
+  },
+  {
+    "id": 62,
+    "title": "Beethoven",
+    "artist": "KENN DOG",
+    "img_src": "beethoven.jpg",
+    "src": "Kenndog - Beethoven.mp3",
+    "genre": "rap",
+    "colors": {
+      "red": 60,
+      "yellow": 40
+    }
+  },
+  {
+    "id": 63,
+    "title": "Алкоголь",
+    "artist": "Ennyday",
+    "img_src": "ennyday.jpg",
+    "src": "Ennyday - Алкоголь.mp3",
+    "genre": "pop",
+    "colors": {
+      "yellow": 40,
+      "brown": 20,
+      "red": 40
+    }
+  },
+  {
+    "id": 64,
+    "title": "Goddamn",
+    "artist": "Tyga",
+    "img_src": "goddamn.jpg",
+    "src": "Goddamn.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "red": 50,
+      "yellow": 40,
+      "purple": 10
+    }
+  },
+  {
+    "id": 65,
+    "title": "a lot",
+    "artist": "21 Savage",
+    "img_src": "alot.jpg",
+    "src": "a lot.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "black": 40,
+      "blue": 30,
+      "green": 30
+    }
+  },
+  {
+    "id": 66,
+    "title": "HIGHEST IN THE ROOM",
+    "artist": "Travis Scott",
+    "img_src": "intheroom.jpg",
+    "src": "highetintheroom.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "black": 50,
+      "green": 30,
+      "red": 20
+    }
+  },
+  {
+    "id": 67,
+    "title": "Ric Flair Drip",
+    "artist": "21 Savage & Offset & Metro Boomin",
+    "img_src": "ricflairdrip.jpg",
+    "src": "21 Savage & Offset & Metro Boomin - Ric Flair Drip.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "purple": 10,
+      "yellow": 30,
+      "red": 60
+    }
+  },
+  {
+    "id": 68,
+    "title": "Too Many Nights",
+    "artist": "Metro Boomin & Don Toliver & Future",
+    "img_src": "toomanynights.jpg",
+    "src": "too many nights.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 40,
+      "black": 20,
+      "red": 40
+    }
+  },
+  {
+    "id": 69,
+    "title": "Покохай мене",
+    "artist": "Chico & Qatoshi & 100лиця",
+    "img_src": "cq100.jpg",
+    "src": "Chico feat. Qatoshi & 100лиця - Покохай Мене.mp3",
+    "genre": "pop",
+    "colors": {
+      "white": 50,
+      "green": 50
+    }
+  },
+  {
+    "id": 70,
+    "title": "Rack",
+    "artist": "callmestevieray",
+    "img_src": "rack.jpg",
+    "src": "Rack.mp3",
+    "genre": "rap",
+    "colors": {
+      "brown": 60,
+      "red": 40
+    }
+  },
+  {
+    "id": 71,
+    "title": "Sugar",
+    "artist": "Robin Schulz feat. Francesco Yates",
+    "img_src": "sugar.jpg",
+    "src": "Sugar.mp3",
+    "genre": "pop",
+    "colors": {
+      "white": 60,
+      "yellow": 20,
+      "green": 20
+    }
+  },
+  {
+    "id": 72,
+    "title": "NOT OK",
+    "artist": "Tricky Nicki ft. Freaky Siren",
+    "img_src": "NOTOK.jpg",
+    "src": "NOT OK.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "white": 50,
+      "green": 20,
+      "yellow": 30
+    }
+  },
+  {
+    "id": 73,
+    "title": "Bag",
+    "artist": "Koda",
+    "img_src": "bagkoda.jpg",
+    "src": "Bag.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 50,
+      "red": 50
+    }
+  },
+  {
+    "id": 74,
+    "title": "redrum",
+    "artist": "21 Savage",
+    "img_src": "redrum.jpg",
+    "src": "21 Savage - Redrum.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 40,
+      "black": 30,
+      "red": 30
+    }
+  },
+  {
+    "id": 75,
+    "title": "Plain Jane",
+    "artist": "FERG",
+    "img_src": "plainjane.jpg",
+    "src": "Plain Jane.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 20,
+      "brown": 30,
+      "red": 50
+    }
+  },
+  {
+    "id": 76,
+    "title": "Big Dawgs",
+    "artist": "Hanumankind Ft. Kalmi",
+    "img_src": "bigdawgs.jpg",
+    "src": "big dawgs.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "brown": 50,
+      "red": 50
+    }
+  },
+  {
+    "id": 77,
+    "title": "Nevermind",
+    "artist": "Dennis Lloyd",
+    "img_src": "dll.jpg",
+    "src": "Dennis Lloyd - Nevermind.mp3",
+    "genre": "indie",
+    "colors": {
+      "white": 50,
+      "blue": 50
+    }
+  },
+  {
+    "id": 78,
+    "title": "Borderline",
+    "artist": "Tove Lo",
+    "img_src": "borderline.jpg",
+    "src": "tove lo borderline.mp3",
+    "genre": "pop",
+    "colors": {
+      "purple": 40,
+      "green": 40,
+      "red": 20
+    }
+  },
+  {
+    "id": 79,
+    "title": "How Long",
+    "artist": "Tove Lo",
+    "img_src": "howlong.jpg",
+    "src": "Tove Lo How Long.mp3",
+    "genre": "pop",
+    "colors": {
+      "green": 20,
+      "yellow": 50,
+      "red": 30
+    }
+  },
+  {
+    "id": 80,
+    "title": "The Door",
+    "artist": "Teddy Swims",
+    "img_src": "thedoor.jpg",
+    "src": "Teddy Swims - The Door.mp3",
+    "genre": "pop",
+    "colors": {
+      "yellow": 50,
+      "purple": 20,
+      "green": 30
+    }
+  },
+  {
+    "id": 81,
+    "title": "Body Language",
+    "artist": "Tricky Nicki ft. Freaky Siren",
+    "img_src": "bodyl.jpg",
+    "src": "body language.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 20,
+      "green": 60,
+      "red": 20
+    }
+  },
+  {
+    "id": 82,
+    "title": "Хай пишуть",
+    "artist": "DOROFEEVA",
+    "img_src": "haipishut.jpg",
+    "src": "DOROFEEVA - Хай Пишуть.mp3",
+    "genre": "pop",
+    "colors": {
+      "white": 40,
+      "yellow": 40,
+      "red": 20
+    }
+  },
+  {
+    "id": 83,
+    "title": "Dip",
+    "artist": "Tyga feat. Nicki Minaj",
+    "img_src": "Swish.jpg",
+    "src": "Dip.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 30,
+      "brown": 30,
+      "red": 40
+    }
+  },
+  {
+    "id": 84,
+    "title": "Thunderstruck",
+    "artist": "AC/DC",
+    "img_src": "acdc.jpg",
+    "src": "ACDC - Thunderstruck.mp3",
+    "genre": "rock",
+    "colors": {
+      "brown": 20,
+      "red": 80
+    }
+  },
+  {
+    "id": 85,
+    "title": "I Love It",
+    "artist": "Kanye West & Lil Pump feat. Adele Givens",
+    "img_src": "iloveit.jpg",
+    "src": "I Love It.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "green": 20,
+      "yellow": 40,
+      "red": 40
+    }
+  },
+  {
+    "id": 86,
+    "title": "Old Town Road",
+    "artist": "Lil Nas X ft. Billy Ray Cyrus",
+    "img_src": "horse.jpg",
+    "src": "Old Town Road.mp3",
+    "genre": "rap",
+    "colors": {
+      "purple": 50,
+      "yellow": 30,
+      "red": 20
+    }
+  },
+  {
+    "id": 87,
+    "title": "Back In Black",
+    "artist": "AC/DC",
+    "img_src": "acdc.jpg",
+    "src": "ACDC - Back In Black.mp3",
+    "genre": "rock",
+    "colors": {
+      "red": 70,
+      "yellow": 30
+    }
+  },
+  {
+    "id": 88,
+    "title": "Уночі",
+    "artist": "YAKTAK",
+    "img_src": "yaktaknight.jpg",
+    "src": "Yaktak - Уночі.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "white": 20,
+      "black": 60,
+      "blue": 20
+    }
+  },
+  {
+    "id": 89,
+    "title": "Молодість",
+    "artist": "SadSvit",
+    "img_src": "sadsvitm.jpg",
+    "src": "sadsvit - molodist.mp3",
+    "genre": "pop",
+    "colors": {
+      "yellow": 40,
+      "green": 20,
+      "red": 20
+    }
+  },
+  {
+    "id": 90,
+    "title": "One Life",
+    "artist": "Tricky Nicki feat. ALISA",
+    "img_src": "onelife.jpg",
+    "src": "one - life.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "black": 60,
+      "green": 30,
+      "white": 10
+    }
+  },
+  {
+    "id": 91,
+    "title": "VIDPUSTY",
+    "artist": "Milian Beatz",
+    "img_src": "vidpusty.jpg",
+    "src": "Milian Beatz - VIDPUSTY.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 40,
+      "brown": 35,
+      "red": 25
+    }
+  },
+  {
+    "id": 92,
+    "title": "Танцюєш сама",
+    "artist": "Golubenko & YAKTAK",
+    "img_src": "danceone.jpg",
+    "src": "Golubenko - Танцюєш Сама.mp3",
+    "genre": "pop",
+    "colors": {
+      "white": 40,
+      "yellow": 40,
+      "green": 20
+    }
+  },
+  {
+    "id": 93,
+    "title": "T.N.T.",
+    "artist": "AC/DC",
+    "img_src": "tnt.jpg",
+    "src": "AC-DC - TNT.mp3",
+    "genre": "rock",
+    "colors": {
+      "red": 100
+    }
+  },
+  {
+    "id": 94,
+    "title": "BAD TIME",
+    "artist": "Lil Tecca",
+    "img_src": "badtime.jpg",
+    "src": "Lil Tecca - Bad Time.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 33,
+      "purple": 33,
+      "red": 34
+    }
+  },
+  {
+    "id": 95,
+    "title": "Lovin On Me",
+    "artist": "Jack Harlow",
+    "img_src": "lovinonme.jpg",
+    "src": "Jack Harlow - Lovin On Me.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "purple": 65,
+      "yellow": 35
+    }
+  },
+  {
+    "id": 96,
+    "title": "Change Me",
+    "artist": "BigXthaPlug",
+    "img_src": "changeme.jpg",
+    "src": "Change Me.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "green": 10,
+      "yellow": 35,
+      "red": 55
+    }
+  },
+  {
+    "id": 97,
+    "title": "Soak City",
+    "artist": "310babii",
+    "img_src": "soakcity.jpg",
+    "src": "310Babii Soak City (Do It).mp3",
+    "genre": "hiphop",
+    "colors": {
+      "purple": 30,
+      "yellow": 30,
+      "red": 40
+    }
+  },
+  {
+    "id": 98,
+    "title": "Like That",
+    "artist": "Future & Metro Boomin & Kendrick Lamar",
+    "img_src": "likethat.jpg",
+    "src": "Future feat. Metro Boomin - Like That.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 30,
+      "brown": 30,
+      "red": 40
+    }
+  },
+  {
+    "id": 99,
+    "title": "MILLION DOLLAR BABY",
+    "artist": "Tommy Richman",
+    "img_src": "milliondollars.jpg",
+    "src": "million dollar baby.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "green": 30,
+      "yellow": 30,
+      "red": 20,
+      "purple": 10,
+      "white": 10
+    }
+  },
+  {
+    "id": 100,
+    "title": "Lift Me Up",
+    "artist": "Tyga",
+    "img_src": "liftmeup.jpg",
+    "src": "Tyga - Lift Me Up.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "yellow": 50,
+      "brown": 50
+    }
+  },
+  {
+    "id": 101,
+    "title": "LaLaLa",
+    "artist": "YAKTAK",
+    "img_src": "lalala.jpg",
+    "src": "1744534352055_yaktak_-_lalala.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "green": 100,
+      "yellow": 50
+    }
+  }
+]
