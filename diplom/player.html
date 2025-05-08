@@ -56,8 +56,29 @@
 				</select><br><br>
 
 				<label style="color: #111;" data-lang="association">Асоціація кольора з піснею</label>
-				<input type="text" name="color1" placeholder="Main color (eng.)" required><br><br>
-				<input type="text" name="color2" placeholder="Additional color (eng.)"><br>
+				<select name="color1" required>
+					<option value="" data-lang="color1">Оберіть основний колір</option>
+					<option value="blue" data-lang="blue">Синій</option>
+					<option value="green" data-lang="green">Зелений</option>
+					<option value="red" data-lang="red">Червоний</option>
+					<option value="yellow" data-lang="yellow">Жовтий</option>
+					<option value="black" data-lang="black">Чорний</option>
+					<option value="white" data-lang="white">Білий</option>
+					<option value="purple" data-lang="purple">Фіолетовий</option>
+					<option value="brown" data-lang="brown">Коричневий</option>
+					</select><br><br>
+
+					<select name="color2">
+					<option value="" data-lang="color2">Оберіть додатковий колір (необов'язково)</option>
+					<option value="blue" data-lang="blue">Синій</option>
+					<option value="green" data-lang="green">Зелений</option>
+					<option value="red" data-lang="red">Червоний</option>
+					<option value="yellow" data-lang="yellow">Жовтий</option>
+					<option value="black" data-lang="black">Чорний</option>
+					<option value="white" data-lang="white">Білий</option>
+					<option value="purple" data-lang="purple">Фіолетовий</option>
+					<option value="brown" data-lang="brown">Коричневий</option>
+				</select><br>
 	
 				<button type="submit" data-lang="upload">Завантажити</button>
 			  </form>

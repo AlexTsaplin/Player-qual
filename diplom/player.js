@@ -1,6 +1,6 @@
 // Ініціалізація порожнього списку пісень
-let songs = [];
 let currentSong = -1; 
+let currentSongs = [];
 
 // Глобальна змінна для зберігання відкоригованих кольорів
 let correctedColors = {};
@@ -44,6 +44,7 @@ async function loadSongs() {
         const response = await fetch('songs.json');
         if (!response.ok) throw new Error("Ошибка загрузки данных");
         songs = await response.json();
+        currentSongs = [...songs];
         
         if (songs.length > 0) {
             init(); // Запускаємо ініціалізацію лише після завантаження пісень
@@ -57,7 +58,7 @@ async function loadSongs() {
 
 // Ініціалізація плеєра
 function init() {
-    updatePlaylist(songs);
+    updatePlaylist(currentSongs);
 
     // Якщо пісню не вибрано, очищаємо інформацію
     if (currentSong === -1) {
@@ -69,32 +70,38 @@ function init() {
 // Фільтрування пісень за кольором з урахуванням корекції
 function filterSongsByColor(color) {
     const correctedColor = correctedColors[color] || color;
-    const filteredSongs = songs.filter(song => song.colors && song.colors[correctedColor]);
-    updatePlaylist(filteredSongs);
+    const filteredSongs = songs.filter(song => song.colors && song.colors[color]);
+    updatePlaylist(filteredSongs); // ця функція оновить currentSongs
 }
 
 // Функція для завантаження пісні
-function loadSong(num) {
-    if (num === -1 || !songs[num]) {
-        infoWrapper.innerHTML = `<h2></h2><h3></h3>`;
-        currentSongTitle.innerHTML = "";
-        return;
-    }
+function loadSong(num, onLoaded) {
+  if (num === -1 || !currentSongs[num]) {
+      infoWrapper.innerHTML = `<h2></h2><h3></h3>`;
+      currentSongTitle.innerHTML = "";
+      return;
+  }
 
-    // Зупиняємо попереднє відтворення
-    audio.pause();
-    audio.src = "";
-    audio.load();
-    audio.currentTime = 0;
+  audio.pause();
+  audio.src = "";
+  audio.load();
+  audio.currentTime = 0;
 
-    infoWrapper.innerHTML = `<h2>${songs[num].title}</h2><h3>${songs[num].artist}</h3>`;
-    currentSongTitle.innerHTML = songs[num].title;
-    coverImage.style.backgroundImage = `url(${baseImagePath}${songs[num].img_src})`;
+  const song = currentSongs[num];
 
-    // Завантажуємо нову пісню
-    audio.src = `${baseAudioPath}${songs[num].src}`;
-    audio.load();
-    currentFavourite.classList.toggle("active", favourites.includes(num));
+  infoWrapper.innerHTML = `<h2>${song.title}</h2><h3>${song.artist}</h3>`;
+  currentSongTitle.innerHTML = song.title;
+  coverImage.style.backgroundImage = `url(${baseImagePath}${song.img_src})`;
+
+  audio.src = `${baseAudioPath}${song.src}`;
+  audio.load();
+
+  audio.addEventListener("canplaythrough", function handlePlay() {
+      audio.removeEventListener("canplaythrough", handlePlay);
+      if (typeof onLoaded === "function") onLoaded(); // викликаємо play ззовні
+  });
+
+  currentFavourite.classList.toggle("active", favourites.includes(num));
 }
 
 
@@ -284,6 +291,8 @@ function loadSongs() {
     })
     .then(data => {
       songs = data;
+      currentSongs = [...songs]; // зберігаємо копію
+      updatePlaylist(currentSongs);
       // Перераховуємо songsWithMbti після завантаження пісень
       songsWithMbti = computeSongsWithMbti();
       if (songs.length > 0) {
@@ -364,6 +373,73 @@ function openMbtiTest() {
   document.getElementById("mbtiNextButton").disabled = true;
 }
 
+const mbtiDescriptions = {
+  "INTJ": {
+    name: "Архітектор",
+    description: "Творчі та стратегічні мислителі, які мають план для всього."
+  },
+  "INTP": {
+    name: "Логік",
+    description: "Винахідники-новатори з невгамовною жагою до знань."
+  },
+  "ENTJ": {
+    name: "Командир",
+    description: "Сміливі, винахідливі та вольові лідери, які завжди знаходять вихід – або прокладають його самі."
+  },
+  "ENTP": {
+    name: "Полеміст",
+    description: "Кмітливі й допитливі мислителі, які не можуть відмовитися від інтелектуального виклику."
+  },
+  "INFJ": {
+    name: "Адвокат",
+    description: "Спокійні й загадкові, проте дуже натхненні та невтомні ідеалісти."
+  },
+  "INFP": {
+    name: "Посередник",
+    description: "Поетичні, добрі та альтруїстичні особистості, завжди готові допомогти у добрій справі."
+  },
+  "ENFJ": {
+    name: "Протагоніст",
+    description: "Харизматичні й натхненні лідери, що зачаровують своїх слухачів."
+  },
+  "ENFP": {
+    name: "Активіст",
+    description: "Завзяті, креативні та комунікабельні вільні духом люди, які завжди можуть знайти причину для посмішки."
+  },
+  "ISTJ": {
+    name: "Логіст",
+    description: "Практичні індивіди, що віддають перевагу фактам. Їхня надійність не піддається сумніву."
+  },
+  "ISFJ": {
+    name: "Захисник",
+    description: "Дуже віддані та щирі захисники, завжди готові стати на захист своїх близьких."
+  },
+  "ESTJ": {
+    name: "Керівник",
+    description: "Чудові адміністратори, неперевершені в управлінні справами та людьми."
+  },
+  "ESFJ": {
+    name: "Консул",
+    description: "Надзвичайно турботливі, комунікабельні та популярні люди, завжди готові прийти на допомогу."
+  },
+  "ISTP": {
+    name: "Віртуоз",
+    description: "Сміливі та практичні експериментатори, які майстерно володіють усіма видами інструментів."
+  },
+  "ISFP": {
+    name: "Авантюрист",
+    description: "Гнучкі та чарівні митці, завжди готові досліджувати та пізнавати щось нове."
+  },
+  "ESTP": {
+    name: "Підприємець",
+    description: "Кмітливі, енергійні та дуже проникливі люди, яким подобається жити на межі."
+  },
+  "ESFP": {
+    name: "Артист",
+    description: "Спонтанні, енергійні та завзяті люди, з якими ніколи не буває нудно."
+  }
+};
+
 // Функція відображення поточного питання тесту MBTI
 function displayMbtiQuestion() {
   const questionContainer = document.getElementById("mbtiQuestionContainer");
@@ -403,14 +479,23 @@ function displayMbtiQuestion() {
   } else {
       // Після завершення тесту
       const mbtiType = mbtiAnswers.join("");
-      questionContainer.innerHTML = `<p>${translations[lang]["mbtiResult"]} <strong>${mbtiType}</strong></p>`;
+      const nameKey = `mbti_${mbtiType}_name`;
+      const descKey = `mbti_${mbtiType}_desc`;
+
+      const name = translations[lang][nameKey] || mbtiType;
+      const description = translations[lang][descKey] || "Опис не знайдено.";
+
+      questionContainer.innerHTML = `
+        <p>${translations[lang]["mbtiResult"]} <strong>${mbtiType} — ${name}</strong></p>
+        <p style="margin-top: 10px;">${description}</p>`;
+
       document.getElementById("mbtiNextButton").style.display = "none";
 
       // Фільтрація пісень за MBTI
       setTimeout(() => {
           document.getElementById("mbtiModal").style.display = "none";
           filterSongsByMbti(mbtiType);
-      }, 2000);
+      }, 7000);
   }
 }
 
@@ -617,17 +702,22 @@ backToMenuBtn.addEventListener("click", () => {
   // Приховуємо поле пошуку та оновлюємо плейлист
   searchInput.style.display = 'none';
   searchInput.value = '';
-  updatePlaylist(songs);
+  currentSongs = [...songs]; // скидаємо фільтри
+  updatePlaylist(currentSongs);
 });
 
 // Функція для відкриття вікна з інформацією про трек
 function openTrackInfo() {
   trackInfoModal.style.display = 'block';
   setTimeout(() => trackInfoModal.style.opacity = '1', 0); 
-  trackTitle.innerText = songs[currentSong].title;
-  trackArtist.innerText = songs[currentSong].artist;
-  trackCover.style.backgroundImage = `url(${baseImagePath}${songs[currentSong].img_src})`;
+
+  const song = currentSongs[currentSong]; 
+
+  trackTitle.innerText = song.title;
+  trackArtist.innerText = song.artist;
+  trackCover.style.backgroundImage = `url(${baseImagePath}${song.img_src})`;
 }
+
 
 // Функція для закриття вікна з інформацією про трек
 function closeTrackInfo() {
@@ -669,7 +759,7 @@ searchBtn.addEventListener('click', () => {
   } else {
     searchInput.style.display = 'none';
     searchInput.value = '';
-    updatePlaylist(songs);
+    updatePlaylist(currentSongs);;
   }
 });
 
@@ -681,24 +771,26 @@ menuBtn.addEventListener('click', () => {
   if (!container.classList.contains('active')) {
     searchInput.style.display = 'none';
     searchInput.value = '';
-    updatePlaylist(songs);
+    updatePlaylist(currentSongs);;
   } else {
-    updatePlaylist(songs);
+    updatePlaylist(currentSongs);;
   }
 });
 
 // Ініціалізація програвача
 function init() {
-  updatePlaylist(songs);
+  updatePlaylist(currentSongs);;
   loadSong(currentSong);
 }
 
 // Оновлення плейлиста
 function updatePlaylist(songList) {
+  currentSongs = songList;
+
   const playlistContainer = document.querySelector("#playlist");
   playlistContainer.innerHTML = songList.map((song, index) => `
-      <tr class="song">
-          <td class="no"><h5>${song.id + 1}</h5></td>
+      <tr class="song" data-index="${index}">
+          <td class="no"><h5>${index + 1}</h5></td>
           <td class="title">
               <h6>${song.title}</h6>
               <h6 class="artist small-artist">${song.artist}</h6>
@@ -708,32 +800,31 @@ function updatePlaylist(songList) {
       </tr>
   `).join("");
 
-  // Додаємо обробники подій для нових рядків списку
-  document.querySelectorAll(".song").forEach((tr, index) => {
-      tr.addEventListener("click", (e) => {
+  // Додаємо обробники кліку
+  document.querySelectorAll(".song").forEach(row => {
+      row.addEventListener("click", (e) => {
+          const index = parseInt(row.getAttribute("data-index"));
+
           if (e.target.classList.contains("fa-heart")) {
               addToFavourites(index);
               e.target.classList.toggle("active");
               return;
           }
-          currentSong = songList[index].id;
-          loadSong(currentSong);
-          audio.play();
-          container.classList.remove("active");
-          playPauseBtn.classList.replace("fa-play", "fa-pause");
-          playing = true;
 
-          // Сховати поле пошуку та оновити список
-          searchInput.style.display = 'none';
-          searchInput.value = '';
-          updatePlaylist(songList);
+          currentSong = index;
+          loadSong(currentSong, () => {
+              playing = true;
+              audio.play();
+              playPauseBtn.classList.replace("fa-play", "fa-pause");
+          });
       });
 
-      // Завантажити тривалість пісень
-      const audioForDuration = new Audio(`${baseAudioPath}${songList[index].src}`);
+      // Оновлюємо тривалість
+      const index = parseInt(row.getAttribute("data-index"));
+      const audioForDuration = new Audio(`${baseAudioPath}${currentSongs[index].src}`);
       audioForDuration.addEventListener("loadedmetadata", () => {
           const duration = formatTime(audioForDuration.duration);
-          tr.querySelector(".length h5").innerText = duration;
+          row.querySelector(".length h5").innerText = duration;
       });
   });
 }
@@ -762,9 +853,10 @@ playPauseBtn.addEventListener("click", togglePlayPause);
 // Функція для відтворення наступної пісні
 function nextSong() {
   if (shuffle) shuffleFunc();
-  currentSong = (currentSong + 1) % songs.length;
-  loadSong(currentSong);
-  if (playing) audio.play();
+  currentSong = (currentSong + 1) % currentSongs.length;
+  loadSong(currentSong, () => {
+      if (playing) audio.play();
+  });
 }
 
 // Обробник кліку для кнопки "наступна пісня"
@@ -773,9 +865,10 @@ nextBtn.addEventListener("click", nextSong);
 // Функція для відтворення попередньої пісні
 function prevSong() {
   if (shuffle) shuffleFunc();
-  currentSong = (currentSong - 1 + songs.length) % songs.length;
-  loadSong(currentSong);
-  if (playing) audio.play();
+  currentSong = (currentSong - 1 + currentSongs.length) % currentSongs.length;
+  loadSong(currentSong, () => {
+      if (playing) audio.play();
+  });
 }
 
 // Обробник кліку для кнопки "попередня пісня"
@@ -790,7 +883,7 @@ function addToFavourites(index) {
     favourites.push(index);
     if (index === currentSong) currentFavourite.classList.add("active");
   }
-  updatePlaylist(songs);
+  updatePlaylist(currentSongs);;
 }
 
 // Обробник кліку для кнопки "додати в улюблені"
@@ -905,14 +998,14 @@ function updateLanguage(translations, lang) {
 
 // Функція завантаження перекладів
 function loadTranslations() {
-    fetch('language.json')
-        .then(response => response.json())
-        .then(data => {
-            translations = data; // Збереження перекладів
-            const savedLanguage = localStorage.getItem("playerLanguage") || "uk";
-            updateLanguage(translations, savedLanguage);
-        })
-        .catch(error => console.error('Помилка завантаження JSON:', error));
+  fetch('language.json')
+    .then(response => response.json())
+    .then(data => {
+      translations = data;
+      const savedLang = localStorage.getItem("playerLanguage") || "uk";
+      updateLanguage(translations, savedLang);
+      document.getElementById("languageSelect").value = savedLang; // 🔥 ось ця стрічка важлива
+    });
 }
 
 // Завантажуємо переклади при запуску

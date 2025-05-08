@@ -1295,5 +1295,17 @@
       "green": 100,
       "yellow": 50
     }
+  },
+  {
+    "id": 102,
+    "title": "My Type",
+    "artist": "Saweetie",
+    "img_src": "1746693691053_saweetie.png",
+    "src": "1746693691053_saweetie_-_my_type.mp3",
+    "genre": "hiphop",
+    "colors": {
+      "red": 100,
+      "yellow": 50
+    }
   }
 ]
