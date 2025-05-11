@@ -530,14 +530,16 @@ i:active {
  #chooseLuscher,
  #chooseMbtiTest,
  #chooseRhythmTest,
- #chooseGenreTest {
+ #chooseGenreTest,
+ #chooseTemperamentTest {
      width: 190px;
  }
 
  #chooseLuscher,
  #chooseMbtiTest,
  #chooseRhythmTest,
- #chooseGenreTest {
+ #chooseGenreTest,
+ #chooseTemperamentTest {
     height: 41.55px;
  }
 
@@ -658,8 +660,9 @@ i:active {
     background: linear-gradient(45deg, #ff564c, #ff9a76);
 }
 #closeLuscherModal {
-    position: relative;
-    top: -10px; 
+    position: absolute;
+    top: -90px;
+    z-index: 999;
 }
 /* ТЕСТ ЛЮШЕРА */
 
@@ -737,7 +740,8 @@ i:active {
 
 #closeRhythmModal {
     position: absolute;
-    bottom: 25px;
+    top: -97px;
+    z-index: 999;
 }
 /* Ритм. Тест */
 
@@ -904,7 +908,7 @@ i:active {
 
 .test-footer {
     position: absolute;
-    bottom: 140px;
+    bottom: 90px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -959,11 +963,143 @@ i:active {
     background: linear-gradient(45deg, #ff564c, #ff9a76);
 }
 #closeGenreTestModal {
-    position: relative;
-    top: 15px; 
+    position: absolute;
+    top: -75px;
+    z-index: 999 
   }
-
 /* За жанрами */
+
+/* Темперамент */
+#temperamentModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#temperamentModal .test-content {
+    background-color: #be9d9d;
+    padding: 30px 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    text-align: left;
+    color: #111;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#temperamentModal h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+#temperamentForm p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#temperamentForm label {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#temperamentForm input[type="radio"] {
+    margin-right: 5px;
+    transform: scale(1.2);
+}
+
+#temperamentForm button[type="submit"] {
+    margin-top: 25px;
+    padding: 12px 25px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    display: block;
+    margin: 0 auto; 
+    width: 100%; 
+    text-align: center; 
+}
+
+#temperamentForm button[type="submit"]:hover {
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    transform: scale(1.03);
+}
+
+
+#temperamentResult {
+    margin-top: 20px;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+
+#closeTemperamentModal {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(82, 82, 82, 0.8);
+    border: none;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: absolute;
+    top: 10px;
+    z-index: 998;
+}
+
+#closeTemperamentModal:hover {
+    background-color: rgba(168, 147, 147, 0.9);
+    transform: scale(1.05);
+}
+
+#chooseTemperamentTest {
+    width: 100%;                /* повна ширина у flex-батьків */
+    max-width: 250px;           /* щоб не розтягувалась на великих екранах */
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    margin: 10px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chooseTemperamentTest:hover {
+    background: linear-gradient(45deg, #ff9a76, #ff564c);
+    transform: scale(1.03);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#chooseTemperamentTest:active {
+    transform: scale(0.98);
+    background: linear-gradient(45deg, #ff564c, #ff9a76);
+} 
+/* Темперамент */
 
 /* Вікно вибору варіантів */
 .choice-container {
@@ -1022,7 +1158,7 @@ i:active {
 
 .choice-footer {
     position: absolute;
-    bottom: 120px;
+    bottom: 80px;
     width: 100%;
     display: flex;
     justify-content: center;

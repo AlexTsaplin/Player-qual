@@ -1,7 +1,7 @@
 // Ініціалізація порожнього списку пісень
 let currentSong = -1; 
 let currentSongs = [];
-
+const currentLang = localStorage.getItem("playerLanguage") || "uk";
 // Глобальна змінна для зберігання відкоригованих кольорів
 let correctedColors = {};
 
@@ -291,6 +291,7 @@ function loadSongs() {
     })
     .then(data => {
       songs = data;
+      assignTemperamentsByColor();
       currentSongs = [...songs]; // зберігаємо копію
       updatePlaylist(currentSongs);
       // Перераховуємо songsWithMbti після завантаження пісень
@@ -445,7 +446,9 @@ function displayMbtiQuestion() {
   const questionContainer = document.getElementById("mbtiQuestionContainer");
   questionContainer.innerHTML = ""; 
 
-  const lang = localStorage.getItem("playerLanguage") || "uk"; 
+  function getLang() {
+    return localStorage.getItem("playerLanguage") || "uk";
+}
 
   if (mbtiCurrentQuestionIndex < mbtiQuestions.length) {
       const currentQ = mbtiQuestions[mbtiCurrentQuestionIndex];
@@ -646,6 +649,131 @@ document.getElementById("chooseRhythmTest")?.addEventListener("click", () => {
   openRhythmModal();
 });
 // --- РИТМ. ТЕСТ --- //
+
+// --- Тест на темперамент --- //
+const temperamentDescriptions = {
+  "choleric": {
+    name: "Холерик",
+    description: "Імпульсивний, енергійний, схильний до швидких рішень та дій. Часто керується емоціями."
+  },
+  "sanguine": {
+    name: "Сангвінік",
+    description: "Життєрадісний, комунікабельний та активний. Легко адаптується та знаходить спільну мову."
+  },
+  "melancholic": {
+    name: "Меланхолік",
+    description: "Глибокий мислитель, емоційний, схильний до саморефлексії. Потребує стабільності та спокою."
+  },
+  "phlegmatic": {
+    name: "Флегматик",
+    description: "Спокійний, надійний та розсудливий. Не любить поспішати, але має стабільний характер."
+  }
+};
+
+const chooseTemperamentTestBtn = document.getElementById("chooseTemperamentTest");
+
+chooseTemperamentTestBtn.addEventListener("click", () => {
+  const lang = localStorage.getItem("playerLanguage") || "uk";
+  choiceModal.style.display = "none";
+  document.getElementById("temperamentModal").style.display = "flex";
+  document.getElementById("temperamentTitle").textContent = translations[lang]["temperamentTestTitle"];
+  document.getElementById("temperamentForm").reset();
+  document.getElementById("temperamentForm").style.display = "block";
+  document.getElementById("temperamentResult").style.display = "none";
+  document.getElementById("closeTemperamentModal").style.display = "none";
+});
+
+document.getElementById("temperamentForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const lang = localStorage.getItem("playerLanguage") || "uk";
+  const formData = new FormData(this);
+  const answers = [...formData.values()];
+
+  const tempCount = answers.reduce((acc, val) => {
+    if (["choleric", "sanguine", "melancholic", "phlegmatic"].includes(val)) {
+      acc[val] = (acc[val] || 0) + 1;
+    }
+    return acc;
+  }, {});
+
+  if (Object.keys(tempCount).length === 0) return;
+
+  const temperament = Object.entries(tempCount).sort((a, b) => b[1] - a[1])[0][0];
+
+  const resultContainer = document.getElementById("temperamentResult");
+  const name = translations[lang][`temperament_${temperament}_name`];
+  const description = translations[lang][`temperament_${temperament}_desc`];
+
+  resultContainer.innerHTML = `
+    <p><strong>${name}</strong></p>
+    <p>${description}</p>`;
+  
+  document.getElementById("temperamentForm").style.display = "none";
+  document.getElementById("temperamentTitle").textContent = translations[lang]["temperamentResultTitle"];
+  resultContainer.style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("temperamentModal").style.display = "none";
+    filterSongsByTemperament(temperament);
+  }, 5000);
+});
+
+function assignTemperamentsByColor() {
+  songs.forEach(song => {
+    if (!song.colors) return;
+
+    const dominantColor = Object.entries(song.colors)
+      .sort((a, b) => b[1] - a[1])[0][0]; // Найсильніший колір
+
+    let temperament = "sanguine"; // За замовчуванням
+
+    switch (dominantColor) {
+      case "red":
+      case "yellow":
+        temperament = "choleric";
+        break;
+      case "blue":
+      case "green":
+        temperament = "sanguine";
+        break;
+      case "black":
+      case "brown":
+        temperament = "melancholic";
+        break;
+      case "white":
+      case "purple":
+        temperament = "phlegmatic";
+        break;
+    }
+
+    song.temperament = temperament;
+  });
+}
+
+// Функція для фільтрації пісень за темпераментом
+function filterSongsByTemperament(temperament) {
+  const lang = localStorage.getItem("playerLanguage") || "uk";
+  const filteredSongs = songs.filter(song => song.temperament === temperament);
+
+  if (filteredSongs.length > 0) {
+    updatePlaylist(filteredSongs);
+  } else {
+    alert(`Пісень для темпераменту ${translations[lang][`temperament_${temperament}_name`]} не знайдено.`);
+  }
+}
+
+// Функція для відображення відфільтрованих пісень
+function displayFilteredSongs(filteredSongs) {
+  const songsList = document.getElementById("songsList");
+  songsList.innerHTML = ''; // Очищаємо поточний список
+
+  filteredSongs.forEach(song => {
+    const songElement = document.createElement("li");
+    songElement.textContent = `${song.title} — ${song.artist}`;
+    songsList.appendChild(songElement);
+  });
+}
+// --- Тест на темперамент --- //
 
 // Відкрити вибір опцій
 openPlayerBtn.addEventListener("click", () => {

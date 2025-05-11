@@ -157,6 +157,37 @@
 			</div>
 		</div>
 
+		<!-- Модальне вікно Тесту на темперамент -->
+		<div id="temperamentModal" class="luscher-test-container" style="display: none;">
+			<div class="test-content">
+			<h2 id="temperamentTitle" data-lang="temperamentTesttitle">Тест на темперамент</h2>
+			<form id="temperamentForm">
+				<p data-lang="tempquestion1">1. Ви легко збуджуєтесь і швидко реагуєте?</p>
+				<label><input type="radio" name="q1" value="choleric" required><span data-lang="yes">Так</span></label>
+				<label><input type="radio" name="q1" value="none"><span data-lang="no">Ні</span></label>
+		
+				<p data-lang="tempquestion2">2. Вам комфортно залишатись спокійним та врівноваженим?</p>
+				<label><input type="radio" name="q2" value="phlegmatic" required><span data-lang="yes">Так</span></label>
+				<label><input type="radio" name="q2" value="none"><span data-lang="no">Ні</span></label>
+		
+				<p data-lang="tempquestion3">3. Ви чутливі до емоцій та схильні до глибоких переживань?</p>
+				<label><input type="radio" name="q3" value="melancholic" required><span data-lang="yes">Так</span></label>
+				<label><input type="radio" name="q3" value="none"><span data-lang="no">Ні</span></label>
+		
+				<p data-lang="tempquestion4">4. Ви товариські, активні та веселі?</p>
+				<label><input type="radio" name="q4" value="sanguine" required><span data-lang="yes">Так</span></label>
+				<label><input type="radio" name="q4" value="none"><span data-lang="no">Ні</span></label>
+		
+				<br><br>
+				<button type="submit" data-lang="selectsongs">Підібрати пісні</button>
+			</form>
+			<div id="temperamentResult" style="display: none; color: black; margin-top: 20px;"></div>
+			</div>
+			<div class="test-footer">
+			<button id="closeTemperamentModal" data-lang="close">Закрити</button>
+			</div>
+		</div>
+
 		<!-- Модальне вікно промпта -->
 		<div id="choiceModal" class="choice-container" style="display: none;">
 			<div class="choice-content">
@@ -165,6 +196,8 @@
 					<button id="chooseGenreTest" data-lang="genreTest">За жанрами</button>
 					<button id="chooseLuscher" data-lang="luscherTest">Тест Люшера</button>
 					<button id="chooseMbtiTest" data-lang="mbtiTest">MBTI тест</button>
+					<button id="chooseTemperamentTest" data-lang="temperamentTest">Темперамент тест</button>
+					<div id="temperamentResult" style="display: none; color: black; margin-top: 20px;"></div>
 					<button id="chooseRhythmTest" data-lang="rhythmTest">Ритмічний тест</button>		
 				</div>
 			</div>

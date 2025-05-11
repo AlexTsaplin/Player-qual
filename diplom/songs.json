@@ -10,7 +10,8 @@
       "blue": 30,
       "black": 50,
       "red": 20
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 1,
@@ -22,7 +23,8 @@
     "colors": {
       "green": 70,
       "blue": 30
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 2,
@@ -34,7 +36,8 @@
     "colors": {
       "red": 60,
       "yellow": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 3,
@@ -46,7 +49,8 @@
     "colors": {
       "yellow": 70,
       "green": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 4,
@@ -59,7 +63,8 @@
       "blue": 40,
       "black": 20,
       "green": 40
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 5,
@@ -72,7 +77,8 @@
       "blue": 60,
       "black": 30,
       "red": 10
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 6,
@@ -84,7 +90,8 @@
     "colors": {
       "purple": 20,
       "yellow": 80
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 7,
@@ -96,7 +103,8 @@
     "colors": {
       "green": 50,
       "black": 50
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 8,
@@ -109,7 +117,8 @@
       "yellow": 70,
       "black": 10,
       "red": 20
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 9,
@@ -122,7 +131,8 @@
       "green": 40,
       "white": 30,
       "yellow": 30
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 10,
@@ -134,7 +144,8 @@
     "colors": {
       "yellow": 60,
       "white": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 11,
@@ -147,7 +158,8 @@
       "brown": 60,
       "yellow": 20,
       "red": 20
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 12,
@@ -159,7 +171,8 @@
     "colors": {
       "yellow": 50,
       "purple": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 13,
@@ -172,7 +185,8 @@
       "white": 60,
       "brown": 20,
       "blue": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 14,
@@ -184,7 +198,8 @@
     "colors": {
       "yellow": 65,
       "purple": 35
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 15,
@@ -197,7 +212,8 @@
       "black": 30,
       "red": 40,
       "yellow": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 16,
@@ -210,7 +226,8 @@
       "white": 50,
       "blue": 25,
       "green": 25
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 17,
@@ -223,7 +240,8 @@
       "purple": 50,
       "yellow": 30,
       "red": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 18,
@@ -236,7 +254,8 @@
       "green": 30,
       "yellow": 40,
       "purple": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 19,
@@ -249,7 +268,8 @@
       "yellow": 30,
       "purple": 20,
       "red": 50
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 20,
@@ -261,7 +281,8 @@
     "colors": {
       "black": 30,
       "red": 70
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 21,
@@ -274,7 +295,8 @@
       "brown": 30,
       "green": 50,
       "red": 20
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 22,
@@ -287,7 +309,8 @@
       "yellow": 55,
       "brown": 15,
       "red": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 23,
@@ -300,7 +323,8 @@
       "brown": 50,
       "red": 40,
       "green": 10
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 24,
@@ -312,7 +336,8 @@
     "colors": {
       "blue": 50,
       "green": 50
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 25,
@@ -325,7 +350,8 @@
       "yellow": 40,
       "purple": 30,
       "red": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 26,
@@ -338,7 +364,8 @@
       "green": 70,
       "black": 10,
       "white": 20
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 27,
@@ -351,7 +378,8 @@
       "black": 50,
       "brown": 25,
       "blue": 25
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 28,
@@ -363,7 +391,8 @@
     "colors": {
       "purple": 20,
       "red": 80
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 29,
@@ -376,7 +405,8 @@
       "brown": 10,
       "yellow": 30,
       "red": 60
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 30,
@@ -389,7 +419,8 @@
       "green": 20,
       "red": 20,
       "yellow": 60
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 31,
@@ -402,7 +433,8 @@
       "brown": 30,
       "red": 60,
       "purple": 10
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 32,
@@ -415,7 +447,8 @@
       "white": 40,
       "green": 40,
       "purple": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 33,
@@ -428,7 +461,8 @@
       "yellow": 50,
       "purple": 10,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 34,
@@ -440,7 +474,8 @@
     "colors": {
       "yellow": 50,
       "red": 50
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 35,
@@ -453,7 +488,8 @@
       "blue": 40,
       "black": 40,
       "red": 20
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 36,
@@ -467,7 +503,8 @@
       "yellow": 45,
       "green": 20,
       "white": 20
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 37,
@@ -480,7 +517,8 @@
       "blue": 50,
       "green": 20,
       "brown": 30
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 38,
@@ -492,7 +530,8 @@
     "colors": {
       "yellow": 40,
       "red": 60
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 39,
@@ -505,7 +544,8 @@
       "yellow": 30,
       "purple": 30,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 40,
@@ -518,7 +558,8 @@
       "yellow": 30,
       "black": 20,
       "red": 50
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 41,
@@ -531,7 +572,8 @@
       "green": 30,
       "black": 30,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 42,
@@ -544,7 +586,8 @@
       "blue": 40,
       "green": 40,
       "white": 20
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 43,
@@ -556,7 +599,8 @@
     "colors": {
       "blue": 50,
       "green": 50
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 44,
@@ -568,7 +612,8 @@
     "colors": {
       "black": 20,
       "red": 80
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 45,
@@ -581,7 +626,8 @@
       "brown": 10,
       "black": 30,
       "red": 60
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 46,
@@ -593,7 +639,8 @@
     "colors": {
       "red": 90,
       "green": 10
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 47,
@@ -606,7 +653,8 @@
       "yellow": 20,
       "brown": 30,
       "blue": 50
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 48,
@@ -619,7 +667,8 @@
       "blue": 40,
       "green": 40,
       "white": 20
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 49,
@@ -632,7 +681,8 @@
       "blue": 60,
       "green": 15,
       "white": 70
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 50,
@@ -645,7 +695,8 @@
       "green": 40,
       "purple": 40,
       "red": 20
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 51,
@@ -658,7 +709,8 @@
       "white": 40,
       "purple": 40,
       "red": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 52,
@@ -671,7 +723,8 @@
       "brown": 30,
       "yellow": 50,
       "red": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 53,
@@ -684,7 +737,8 @@
       "purple": 40,
       "yellow": 30,
       "red": 40
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 54,
@@ -696,7 +750,8 @@
     "colors": {
       "yellow": 70,
       "purple": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 55,
@@ -708,7 +763,8 @@
     "colors": {
       "blue": 50,
       "green": 50
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 56,
@@ -720,7 +776,8 @@
     "colors": {
       "brown": 20,
       "red": 80
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 57,
@@ -733,7 +790,8 @@
       "green": 33,
       "blue": 33,
       "red": 34
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 58,
@@ -746,7 +804,8 @@
       "yellow": 50,
       "black": 10,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 59,
@@ -759,7 +818,8 @@
       "yellow": 30,
       "brown": 30,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 60,
@@ -772,7 +832,8 @@
       "white": 70,
       "blue": 25,
       "black": 5
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 61,
@@ -785,7 +846,8 @@
       "green": 40,
       "black": 20,
       "blue": 40
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 62,
@@ -797,7 +859,8 @@
     "colors": {
       "red": 60,
       "yellow": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 63,
@@ -810,7 +873,8 @@
       "yellow": 40,
       "brown": 20,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 64,
@@ -823,7 +887,8 @@
       "red": 50,
       "yellow": 40,
       "purple": 10
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 65,
@@ -836,7 +901,8 @@
       "black": 40,
       "blue": 30,
       "green": 30
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 66,
@@ -849,7 +915,8 @@
       "black": 50,
       "green": 30,
       "red": 20
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 67,
@@ -862,7 +929,8 @@
       "purple": 10,
       "yellow": 30,
       "red": 60
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 68,
@@ -875,7 +943,8 @@
       "yellow": 40,
       "black": 20,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 69,
@@ -887,7 +956,8 @@
     "colors": {
       "white": 50,
       "green": 50
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 70,
@@ -899,7 +969,8 @@
     "colors": {
       "brown": 60,
       "red": 40
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 71,
@@ -912,7 +983,8 @@
       "white": 60,
       "yellow": 20,
       "green": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 72,
@@ -925,7 +997,8 @@
       "white": 50,
       "green": 20,
       "yellow": 30
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 73,
@@ -937,7 +1010,8 @@
     "colors": {
       "yellow": 50,
       "red": 50
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 74,
@@ -950,7 +1024,8 @@
       "yellow": 40,
       "black": 30,
       "red": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 75,
@@ -963,7 +1038,8 @@
       "yellow": 20,
       "brown": 30,
       "red": 50
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 76,
@@ -975,7 +1051,8 @@
     "colors": {
       "brown": 50,
       "red": 50
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 77,
@@ -987,7 +1064,8 @@
     "colors": {
       "white": 50,
       "blue": 50
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 78,
@@ -1000,7 +1078,8 @@
       "purple": 40,
       "green": 40,
       "red": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 79,
@@ -1013,7 +1092,8 @@
       "green": 20,
       "yellow": 50,
       "red": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 80,
@@ -1026,7 +1106,8 @@
       "yellow": 50,
       "purple": 20,
       "green": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 81,
@@ -1039,7 +1120,8 @@
       "yellow": 20,
       "green": 60,
       "red": 20
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 82,
@@ -1052,7 +1134,8 @@
       "white": 40,
       "yellow": 40,
       "red": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 83,
@@ -1065,7 +1148,8 @@
       "yellow": 30,
       "brown": 30,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 84,
@@ -1077,7 +1161,8 @@
     "colors": {
       "brown": 20,
       "red": 80
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 85,
@@ -1090,7 +1175,8 @@
       "green": 20,
       "yellow": 40,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 86,
@@ -1103,7 +1189,8 @@
       "purple": 50,
       "yellow": 30,
       "red": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 87,
@@ -1115,7 +1202,8 @@
     "colors": {
       "red": 70,
       "yellow": 30
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 88,
@@ -1128,7 +1216,8 @@
       "white": 20,
       "black": 60,
       "blue": 20
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 89,
@@ -1141,7 +1230,8 @@
       "yellow": 40,
       "green": 20,
       "red": 20
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 90,
@@ -1154,7 +1244,8 @@
       "black": 60,
       "green": 30,
       "white": 10
-    }
+    },
+    "temperament": "melancholic"
   },
   {
     "id": 91,
@@ -1167,7 +1258,8 @@
       "yellow": 40,
       "brown": 35,
       "red": 25
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 92,
@@ -1180,7 +1272,8 @@
       "white": 40,
       "yellow": 40,
       "green": 20
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 93,
@@ -1191,7 +1284,8 @@
     "genre": "rock",
     "colors": {
       "red": 100
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 94,
@@ -1204,7 +1298,8 @@
       "yellow": 33,
       "purple": 33,
       "red": 34
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 95,
@@ -1216,7 +1311,8 @@
     "colors": {
       "purple": 65,
       "yellow": 35
-    }
+    },
+    "temperament": "phlegmatic"
   },
   {
     "id": 96,
@@ -1229,7 +1325,8 @@
       "green": 10,
       "yellow": 35,
       "red": 55
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 97,
@@ -1242,7 +1339,8 @@
       "purple": 30,
       "yellow": 30,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 98,
@@ -1255,7 +1353,8 @@
       "yellow": 30,
       "brown": 30,
       "red": 40
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 99,
@@ -1270,7 +1369,8 @@
       "red": 20,
       "purple": 10,
       "white": 10
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 100,
@@ -1282,7 +1382,8 @@
     "colors": {
       "yellow": 50,
       "brown": 50
-    }
+    },
+    "temperament": "choleric"
   },
   {
     "id": 101,
@@ -1294,7 +1395,8 @@
     "colors": {
       "green": 100,
       "yellow": 50
-    }
+    },
+    "temperament": "sanguine"
   },
   {
     "id": 102,
@@ -1306,6 +1408,7 @@
     "colors": {
       "red": 100,
       "yellow": 50
-    }
+    },
+    "temperament": "choleric"
   }
 ]
