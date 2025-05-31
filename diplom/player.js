@@ -450,6 +450,8 @@ function displayMbtiQuestion() {
     return localStorage.getItem("playerLanguage") || "uk";
 }
 
+  const lang = getLang();
+
   if (mbtiCurrentQuestionIndex < mbtiQuestions.length) {
       const currentQ = mbtiQuestions[mbtiCurrentQuestionIndex];
 
@@ -618,7 +620,7 @@ function openRhythmModal() {
         filterSongsByRhythm(finalBPM);
       }
     }, 2000);
-  }, 8000);  
+  }, 5000);  
 }
 
 document.getElementById("rhythmTapButton").addEventListener("click", () => {
